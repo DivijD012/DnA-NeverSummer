@@ -8,7 +8,7 @@ CREATE TABLE `Player` (
   `in_game_currency_gold` int,
   `Level` int,
   `Player_location` varchar(255),
-  `server_ip` int,
+  `server_ip` varchar(255),
   `Class_name` varchar(255),
   PRIMARY KEY (`player_id`)
 );
@@ -22,7 +22,7 @@ CREATE TABLE `Player_Achievements` (
 CREATE TABLE `Boss_Attacks` (
   `Dungeon_name` varchar(255),
   `Boss` varchar(255),
-  `attacks` int,
+  `attacks` varchar(255),
   PRIMARY KEY (`Boss`, `Dungeon_name`, `attacks`)
 );
 
@@ -56,7 +56,7 @@ CREATE TABLE `Boss` (
   `Dungeon_name` varchar(255),
   `Name` varchar(255),
   `max_health` int,
-  `difficulty` int,
+  `difficulty` varchar(255),
   PRIMARY KEY (`Dungeon_name`, `Name`)
 );
 
