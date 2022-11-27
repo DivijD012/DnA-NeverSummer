@@ -1,5 +1,7 @@
 # DnA-NeverSummer
 
+video link: https://iiitaphyd-my.sharepoint.com/:v:/g/personal/divij_d_students_iiit_ac_in/EdpXSi3SGohDm9INNOQQNowBoD7gZy8Xhu6bO4SDhKL8cw?e=BzeP52
+
 ### Setting up the database
 In mysql shell with GRANT permissions
 ##### change hostname

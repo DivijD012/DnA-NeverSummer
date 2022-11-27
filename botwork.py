@@ -1,4 +1,5 @@
 import subprocess as sp
+from bloat import *
 from tabulate import tabulate
 
 def IntegerCheck(i):
@@ -244,6 +245,7 @@ def botwork_menu(cur1, con1):
     con=con1
     while(1):
         tmp = sp.call('clear', shell=True)
+        print_bots()
         # Select what type of user you are
         print("0. Back")
         print("1. Delete limited items after it's time is expired")  

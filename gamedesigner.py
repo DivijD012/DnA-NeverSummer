@@ -176,7 +176,44 @@ def insert_boss():
     
     tmp = input("Enter any key to CONTINUE>")
 
-def insert_npc():
+def insert_npc_gender():
+    global cur, con
+    print("Insert NPC Gender")
+    npc_name = input("Enter NPC name : ")
+    
+    print("Choose an NPC Gender from :")
+    print("1. Male")
+    print("2. Female")
+    print("3. Other")
+    while(1):
+        npc_gender = input("Enter NPC gender b/w 1 to 3 : ")
+        try:
+            npc_gender = int(npc_gender)
+        except:
+            continue
+        if(npc_gender < 0):
+            print("Invalid npc_type")
+            continue
+        else:
+            break
+    if(npc_gender == 1):
+        npc_gender = "Male"
+    elif(npc_gender == 2):
+        npc_gender = "Female"
+    elif(npc_gender == 3):
+        npc_gender = "Other"
+    
+    try:
+        cmd = f"INSERT INTO NPC_Gender VALUES ('{npc_name}', '{npc_gender}')"
+        cur.execute(cmd)
+        con.commit()
+        pass
+    except Exception as e:
+        con.rollback()
+        print (e)
+    tmp = input("Enter any key to CONTINUE>")
+
+def insert_npc2():
     global cur, con
     print("Insert NPC")
     npc_name = input("Enter NPC name : ")
@@ -215,31 +252,8 @@ def insert_npc():
         npc_type = "Idle NPC"
     elif(npc_type == 4):
         npc_type = "Story NPC"
-    print("Choose an NPC Gender from :")
-    print("1. Male")
-    print("2. Female")
-    print("3. Other")
-    while(1):
-        npc_gender = input("Enter NPC type b/w 1 to 3 : ")
-        try:
-            npc_gender = int(npc_gender)
-        except:
-            continue
-        if(npc_gender < 0):
-            print("Invalid npc_type")
-            continue
-        else:
-            break
-    if(npc_gender == 1):
-        npc_gender = "Male"
-    elif(npc_gender == 2):
-        npc_gender = "Female"
-    elif(npc_gender == 3):
-        npc_gender = "Other"
     
     try:
-        cmd = f"INSERT INTO NPC _Gender VALUES ('{npc_name}', '{npc_gender}');"
-        cur.execute(cmd)
         # code here
         cmd = f"INSERT INTO NPC VALUES ('{npc_name}', {locat_id}, '{npc_type}');"
         cur.execute(cmd)
@@ -367,12 +381,14 @@ def dispatch_game_designer(ch):
     elif(ch == 3):
         insert_boss()
     elif(ch == 4):
-        insert_npc()
+        insert_npc_gender()
     elif(ch == 5):
-        update_rarity()
+        insert_npc2()
     elif(ch == 6):
-        update_boss_difficulty()
+        update_rarity()
     elif(ch == 7):
+        update_boss_difficulty()
+    elif(ch == 8):
         update_dungeon_lvl_req()
     else:
         print("Error: Invalid Option")
@@ -389,10 +405,11 @@ def game_designer_menu(cur1, con1):
         print("1. Insert items")  
         print("2. Insert Dungeon")  
         print("3. Insert Boss") 
-        print("4. Insert NPC")
-        print("5. Update rarity of items")
-        print("6. update boss difficulty")
-        print("7. Update dungeon's min_level_requirement")
+        print("4. Insert NPC_Gender")
+        print("5. Insert NPC")
+        print("6. Update rarity of items")
+        print("7. update boss difficulty")
+        print("8. Update dungeon's min_level_requirement")
         ch = int(input("Enter choice> "))
         tmp = sp.call('clear', shell=True)
         if ch == 0:
