@@ -1,5 +1,6 @@
 import subprocess as sp
 from tabulate import tabulate
+from bloat import *
 cur = 1
 con = 2
 def players_nation():
@@ -115,6 +116,7 @@ def precog_menu(cur1, con1):
     con=con1
     while(1):
         tmp = sp.call('clear', shell=True)
+        print_precog()
         # Select what type of user you are
         print("0. Back")
         print("1. Get Players By nation")  
