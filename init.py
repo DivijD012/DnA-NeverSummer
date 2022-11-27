@@ -14,11 +14,7 @@ else:
     print("Failed to connect")
 
 filenames = ["SERVER", "Class", "Class_Weapons", "Location", "NPC_Gender", "NPC", "Item", "Player", "BUY", "Player_Achievements", "OWNED_BY", "Dungeon", "Dungeon_Mob", "Boss", "Boss_Attacks", "DROPS", "DAMAGE", "TRADE"]
-<<<<<<< HEAD
-# filenames = [ +"DROPS", "DAMAGE", "TRADE"]
-=======
 # filenames = [ "DROPS", "DAMAGE", "TRADE"]
->>>>>>> 15bd72bea0565a142375dc285af69d56e46a0506
 # filenames = ["SERVER", "Class", "Class_Weapons", "Location", "NPC_Gender"]
 
 cmd = "INSERT INTO {} VALUES ("

@@ -17,8 +17,6 @@ def print_title():
 ╚═════╝░░╚═════╝░╚═╝░░░░░╚═╝╚═╝░░░░░╚═╝╚══════╝╚═╝░░╚═╝""")
     tmp = input("Enter any key to CONTINUE>")
 
-<<<<<<< HEAD
-=======
 def print_precog():
     print("""
 
@@ -43,6 +41,5 @@ def print_gamedev():
 
 # def print_table():
 #     print(tabulate())
->>>>>>> 15bd72bea0565a142375dc285af69d56e46a0506
 
 
