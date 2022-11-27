@@ -110,7 +110,7 @@ def insert_dungeon():
             party_size = int(party_size)
         except:
             continue
-        if(party_size != 4 and part_size != 8 and part_size != 20):
+        if(party_size != 4 and party_size != 8 and party_size != 20):
             print("Invalid party_size")
             continue
         else:
