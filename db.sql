@@ -105,7 +105,7 @@ CREATE TABLE `SERVER` (
   `IP` varchar(255),
   `Server_location` varchar(255),
   `Player_count` int,
-  `Traffic` varchar(255),
+  `Traffic` int,
   PRIMARY KEY (`IP`)
 );
 
@@ -119,7 +119,7 @@ CREATE TABLE `Location` (
 
 CREATE TABLE `Item` (
   `Item_ID` int,
-  `Item_name` int,
+  `Item_name` varchar(255),
   `Rarity` varchar(255),
   `Cost` int,
   PRIMARY KEY (`Item_ID`)

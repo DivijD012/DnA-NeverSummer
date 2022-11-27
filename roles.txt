@@ -1,0 +1,58 @@
+Precog:
+(A) Query Functions
+SELECTION -
+○ GET_PLAYERS_BY_NATION :
+- Retrieve complete data tuples of players who play from a certain location.
+PROJECTION -
+DnA Project Requirements document
+6○ GET_WHALES :
+- List all the players who have spent more than a 1000 USD on the game.
+AGGREGATE FUNCTIONS -
+○ TRAFFIC_SUM = Sum of the traffic across all the servers.
+SEARCH FUNCTIONS -
+○ CUSS_LIKE :
+- Retrieves tuples of all players whose name matches with a given word (for
+filtering)
+(B) Analysis -
+Server location-wise top 10 players with the highest level and most achievements
+(scaled appropriately).
+Ordered list of classes based on how popular the class is.
+Popular Items owned by players of each class.
+Location-wise popularity of the game based on how many people play the game
+from that location.
+
+GameDesigner:
+■ Insert new Item to items
+■ Insert new dungeon
+■ Insert new Boss
+■ Insert new NPC
+■ Insert new location
+
+■ Update item rarity
+■ Update boss difficulty
+■ Update dungeon’s min_level_requirement
+
+BotWork:
+○ Delete :
+■ Delete limited items after it’s time is expired
+■ Delete limited time bosses after their time is expired
+■ Delete a player’s data who deletes their account
+■ Delete a limited time location after it’s time is expired
+
+■ Update player’s total spending and currency_owned
+■ Update server player count
+■ Update player’s level
+
+■ Insert new player to Players
+
+1. Retrieval
+
+2. Modification
+○ Insert :
+
+
+Update :
+
+
+
+

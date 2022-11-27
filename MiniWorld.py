@@ -2,6 +2,9 @@ import subprocess as sp
 import pymysql
 import pymysql.cursors
 import bloat
+from precog import *
+from gamedesigner import *
+from botwork import *
 
 
 def option2():
@@ -23,6 +26,10 @@ def option4():
     Function to implement option 3
     """
     print("Not implemented 4")
+
+
+
+
 
 
 def hireAnEmployee():
@@ -73,14 +80,11 @@ def dispatch(ch):
     """
 
     if(ch == 1):
-#        hireAnEmployee()
-        print("1")
+        precog_menu(cur, con)
     elif(ch == 2):
-        option2()
+        game_designer_menu(cur, con)
     elif(ch == 3):
-        option3()
-    elif(ch == 4):
-        option4()
+        botwork_menu(cur, con)
     else:
         print("Error: Invalid Option")
 
@@ -91,7 +95,7 @@ bloat.print_title()
 
 
 while(1):
-    #tmp = sp.call('clear', shell=True)
+    # tmp = sp.call('clear  ', shell=True)
 
     # Can be skipped if you want to hardcode username and password
     # username = input("Username: ")
@@ -118,23 +122,22 @@ while(1):
         with con.cursor() as cur:
             while(1):
                 #tmp = sp.call('clear', shell=True)
-                # Here taking example of Employee Mini-world
-                print("1. Option 1")  # Hire an Employee
-                print("2. Option 2")  # Fire an Employee
-                print("3. Option 3")  # Promote Employee
-                print("4. Option 4")  # Employee Statistics
-                print("5. Logout")
+                # Select what type of user you are
+                print("1. Precog")  # Precog
+                print("2. GameDesigner")  # Fire an Employee
+                print("3. BotWork")  # Promote Employee
+                print("4. Logout")
                 ch = int(input("Enter choice> "))
                 #tmp = sp.call('clear', shell=True)
-                if ch == 5:
+                if ch == 4:
                     exit()
                 else:
                     dispatch(ch)
-                    tmp = input("Enter any key to CONTINUE>")
+                    # tmp = input("Enter any key to CONTINUE>")
 
     except Exception as e:
      #   tmp = sp.call('clear', shell=True)
         print(e)
         print("Connection Refused: Either username or password is incorrect or user doesn't have access to database")
-        tmp = input("Enter any key to CONTINUE>")
+        tmp = input("Enter any key to CONTINUE    >")
 
