@@ -134,19 +134,19 @@ CREATE TABLE `DAMAGE` (
   PRIMARY KEY (`PLayer_id`, `Boss`, `Player_Dungeon_name`, `Boss_Dungeon_name`, `Item_id`)
 );
 
-ALTER TABLE `Player` ADD FOREIGN KEY (`server_ip`) REFERENCES `SERVER` (`IP`);
+ALTER TABLE `Player` ADD FOREIGN KEY (`server_ip`) REFERENCES `SERVER` (`IP`) ON DELETE CASCADE ;
 
 ALTER TABLE `Player` ADD FOREIGN KEY (`Class_name`) REFERENCES `Class` (`Class_name`);
 
 ALTER TABLE `Player_Achievements` ADD FOREIGN KEY (`player_id`) REFERENCES `Player` (`player_id`);
 
-ALTER TABLE `TRADE` ADD FOREIGN KEY (`seller_id`) REFERENCES `Player` (`player_id`);
+ALTER TABLE `TRADE` ADD FOREIGN KEY (`seller_id`) REFERENCES `Player` (`player_id`) ON DELETE CASCADE;
 
-ALTER TABLE `TRADE` ADD FOREIGN KEY (`buyer_id`) REFERENCES `Player` (`player_id`);
+ALTER TABLE `TRADE` ADD FOREIGN KEY (`buyer_id`) REFERENCES `Player` (`player_id`) ON DELETE CASCADE;
 
-ALTER TABLE `BUY` ADD FOREIGN KEY (`Player_id`) REFERENCES `Player` (`player_id`);
+ALTER TABLE `BUY` ADD FOREIGN KEY (`Player_id`) REFERENCES `Player` (`player_id`) ON DELETE CASCADE;
 
-ALTER TABLE `BUY` ADD FOREIGN KEY (`Item_id`) REFERENCES `Item` (`Item_ID`);
+ALTER TABLE `BUY` ADD FOREIGN KEY (`Item_id`) REFERENCES `Item` (`Item_ID`) ON DELETE CASCADE;
 
 ALTER TABLE `Class_Weapons` ADD FOREIGN KEY (`Class_name`) REFERENCES `Class` (`Class_name`);
 
@@ -158,24 +158,24 @@ ALTER TABLE `NPC` ADD FOREIGN KEY (`Location_id`) REFERENCES `Location` (`Locati
 
 ALTER TABLE `Dungeon_Mob` ADD FOREIGN KEY (`Dungeon_Name`) REFERENCES `Dungeon` (`Name`);
 
-ALTER TABLE `DROP` ADD FOREIGN KEY (`Item_id`) REFERENCES `Item` (`Item_ID`);
+ALTER TABLE `DROP` ADD FOREIGN KEY (`Item_id`) REFERENCES `Item` (`Item_ID`) ON DELETE CASCADE;
 
-ALTER TABLE `OWNED_BY` ADD FOREIGN KEY (`Item_ID`) REFERENCES `Item` (`Item_ID`);
+ALTER TABLE `OWNED_BY` ADD FOREIGN KEY (`Item_ID`) REFERENCES `Item` (`Item_ID`) ON DELETE CASCADE;
 
-ALTER TABLE `OWNED_BY` ADD FOREIGN KEY (`Player_id`) REFERENCES `Player` (`player_id`);
+ALTER TABLE `OWNED_BY` ADD FOREIGN KEY (`Player_id`) REFERENCES `Player` (`player_id`) ON DELETE CASCADE;
 
-ALTER TABLE `DAMAGE` ADD FOREIGN KEY (`PLayer_id`) REFERENCES `Player` (`player_id`);
+ALTER TABLE `DAMAGE` ADD FOREIGN KEY (`PLayer_id`) REFERENCES `Player` (`player_id`) ON DELETE CASCADE;
 
 ALTER TABLE `DAMAGE` ADD FOREIGN KEY (`Player_Dungeon_name`) REFERENCES `Dungeon` (`Name`);
 
-ALTER TABLE `DAMAGE` ADD FOREIGN KEY (`Item_id`) REFERENCES `Item` (`Item_ID`);
+ALTER TABLE `DAMAGE` ADD FOREIGN KEY (`Item_id`) REFERENCES `Item` (`Item_ID`) ON DELETE CASCADE;
 
-ALTER TABLE `Boss_Attacks` ADD FOREIGN KEY (`Dungeon_name`, `Boss`) REFERENCES `Boss` (`Dungeon_name`, `Name`);
+ALTER TABLE `Boss_Attacks` ADD FOREIGN KEY (`Dungeon_name`, `Boss`) REFERENCES `Boss` (`Dungeon_name`, `Name`) ON DELETE CASCADE;
 
 ALTER TABLE `BUY` ADD FOREIGN KEY (`NPC_name`, `Location_id`) REFERENCES `NPC` (`NPC_name`, `Location_id`);
 
-ALTER TABLE `DAMAGE` ADD FOREIGN KEY (`Boss_Dungeon_name`, `Boss`) REFERENCES `Boss` (`Dungeon_name`, `Name`);
+ALTER TABLE `DAMAGE` ADD FOREIGN KEY (`Boss_Dungeon_name`, `Boss`) REFERENCES `Boss` (`Dungeon_name`, `Name`) ON DELETE CASCADE;
 
 
-ALTER TABLE `DROP` ADD FOREIGN KEY (`Dungeon_name`, `Boss_Name`) REFERENCES `Boss` (`Dungeon_name`, `Name`);
+ALTER TABLE `DROP` ADD FOREIGN KEY (`Dungeon_name`, `Boss_Name`) REFERENCES `Boss` (`Dungeon_name`, `Name`) ;
 
