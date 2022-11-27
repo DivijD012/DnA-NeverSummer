@@ -88,7 +88,7 @@ CREATE TABLE `Dungeon_Mob` (
   PRIMARY KEY (`Dungeon_Name`, `Mob_type`, `Mob_level`)
 );
 
-CREATE TABLE `DROP` (
+CREATE TABLE `DROPS` (
   `Dungeon_name` varchar(255),
   `Boss_Name` varchar(255),
   `Item_id` int,
@@ -102,7 +102,7 @@ CREATE TABLE `OWNED_BY` (
 );
 
 CREATE TABLE `SERVER` (
-  `IP` int,
+  `IP` varchar(255),
   `Server_location` varchar(255),
   `Player_count` int,
   `Traffic` varchar(255),
@@ -158,7 +158,7 @@ ALTER TABLE `NPC` ADD FOREIGN KEY (`Location_id`) REFERENCES `Location` (`Locati
 
 ALTER TABLE `Dungeon_Mob` ADD FOREIGN KEY (`Dungeon_Name`) REFERENCES `Dungeon` (`Name`);
 
-ALTER TABLE `DROP` ADD FOREIGN KEY (`Item_id`) REFERENCES `Item` (`Item_ID`) ON DELETE CASCADE;
+ALTER TABLE `DROPS` ADD FOREIGN KEY (`Item_id`) REFERENCES `Item` (`Item_ID`) ON DELETE CASCADE;
 
 ALTER TABLE `OWNED_BY` ADD FOREIGN KEY (`Item_ID`) REFERENCES `Item` (`Item_ID`) ON DELETE CASCADE;
 
@@ -177,5 +177,5 @@ ALTER TABLE `BUY` ADD FOREIGN KEY (`NPC_name`, `Location_id`) REFERENCES `NPC` (
 ALTER TABLE `DAMAGE` ADD FOREIGN KEY (`Boss_Dungeon_name`, `Boss`) REFERENCES `Boss` (`Dungeon_name`, `Name`) ON DELETE CASCADE;
 
 
-ALTER TABLE `DROP` ADD FOREIGN KEY (`Dungeon_name`, `Boss_Name`) REFERENCES `Boss` (`Dungeon_name`, `Name`) ON DELETE CASCADE;
+ALTER TABLE `DROPS` ADD FOREIGN KEY (`Dungeon_name`, `Boss_Name`) REFERENCES `Boss` (`Dungeon_name`, `Name`) ON DELETE CASCADE;
 
