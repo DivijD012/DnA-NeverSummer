@@ -1,10 +1,10 @@
 # change hostname
-CREATE USER 'user1'@'localhost' IDENTIFIED WITH mysql_native_password BY 'password';
+CREATE USER 'user1'@'localhost' IDENTIFIED WITH mysql_native_password BY 'Password@123';
 
 # give privileges 
 # use principle of least privilege later
 GRANT CREATE, ALTER, DROP, INSERT, UPDATE, DELETE, SELECT, REFERENCES, RELOAD on *.* TO 'user1'@'localhost' WITH GRANT OPTION;
 
 # create the database
-create database neversummer
+create database neversummer0;
 
