@@ -215,7 +215,31 @@ def insert_npc():
         npc_type = "Idle NPC"
     elif(npc_type == 4):
         npc_type = "Story NPC"
+    print("Choose an NPC Gender from :")
+    print("1. Male")
+    print("2. Female")
+    print("3. Other")
+    while(1):
+        npc_gender = input("Enter NPC type b/w 1 to 3 : ")
+        try:
+            npc_gender = int(npc_gender)
+        except:
+            continue
+        if(npc_gender < 0):
+            print("Invalid npc_type")
+            continue
+        else:
+            break
+    if(npc_gender == 1):
+        npc_gender = "Male"
+    elif(npc_gender == 2):
+        npc_gender = "Female"
+    elif(npc_gender == 3):
+        npc_gender = "Other"
+    
     try:
+        cmd = f"INSERT INTO NPC _Gender VALUES ('{npc_name}', '{npc_gender}');"
+        cur.execute(cmd)
         # code here
         cmd = f"INSERT INTO NPC VALUES ('{npc_name}', {locat_id}, '{npc_type}');"
         cur.execute(cmd)

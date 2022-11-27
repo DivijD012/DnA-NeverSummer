@@ -139,10 +139,10 @@ def top_locations():
     print("top locations")
     try:
         print_table("""
-            SELECT Player_Location as Location, count(play er_id) as Player_Count
+            SELECT Player_Location as Location, count(player_id) as Player_Count
             FROM Player
             GROUP BY Player_Location
-            ORDER BY count(player_id) DESC;
+            ORDER BY count(player_id) DESC
         """)
         pass
     except Exception as e:
