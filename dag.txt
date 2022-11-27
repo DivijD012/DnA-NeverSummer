@@ -1,0 +1,37 @@
+# DAG
+
+SERVER
+
+Class
+
+Class Weapons
+
+Location
+
+NPC_Gender 
+
+NPC
+
+Item 
+
+Player
+
+BUY
+
+Player_Achievements
+
+OWNED_BY
+
+Dungeon
+
+Dungeon_Mob
+
+Boss
+
+Boss_Attacks
+
+Drop
+
+Damage
+
+TRADE
