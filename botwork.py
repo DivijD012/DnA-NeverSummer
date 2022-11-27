@@ -196,9 +196,19 @@ def insert_new_player():
         cmd += in_game_currency_gems + ","
         cmd += in_game_currency_gold + ","
         cmd += Level + ",'"
-        cmd += Player_location + "','"
-        cmd += server_ip + "','"
-        cmd += Class_name + "') ;"
+        cmd += Player_location + "',"
+        if server_ip == "NULL" :
+            cmd += "NULL,"
+        else:
+            cmd += "'" + server_ip + "',"
+        if Class_name == "NULL" :
+            cmd += "NULL) ;"
+        else:   
+            cmd += "'" + Class_name + "') ;"
+        cur.execute(cmd)
+        con.commit()
+
+        cmd = "insert into Player_Achievements values (" + player_id + ",'newbie') ; " 
         cur.execute(cmd)
         con.commit()
         pass
