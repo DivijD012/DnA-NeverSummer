@@ -17,7 +17,5 @@ def print_title():
 ╚═════╝░░╚═════╝░╚═╝░░░░░╚═╝╚═╝░░░░░╚═╝╚══════╝╚═╝░░╚═╝""")
     tmp = input("Enter any key to CONTINUE>")
 
-# def print_table():
-#     print(tabulate())
 
 
